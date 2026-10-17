@@ -1,0 +1,452 @@
+
+/* ========================================
+   NEXUS — RESPONSIVE DESIGN
+   Desktop, Laptop, Tablet & Mobile
+======================================== */
+
+/* Large laptops */
+@media (max-width: 1200px) {
+    .sidebar {
+        width: 220px;
+        flex-basis: 220px;
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    main {
+        padding: 24px 22px 18px;
+    }
+
+    .dashboard-cards {
+        gap: 12px;
+    }
+
+    .card {
+        padding: 16px;
+    }
+
+    .weather-card {
+        padding: 19px;
+    }
+
+    .topbar {
+        gap: 16px;
+    }
+
+    .top-search {
+        width: 40%;
+        min-width: 230px;
+    }
+}
+
+/* Smaller laptops and tablets */
+@media (max-width: 1000px) {
+    .sidebar {
+        width: 195px;
+        flex-basis: 195px;
+        padding: 22px 12px;
+    }
+
+    .brand {
+        gap: 9px;
+        padding-bottom: 22px;
+    }
+
+    .brand strong {
+        font-size: 18px;
+    }
+
+    .brand small {
+        font-size: 9px;
+    }
+
+    .sidebar nav a {
+        gap: 8px;
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    main {
+        padding: 22px 18px;
+    }
+
+    .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .top-search {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .welcome h1 {
+        font-size: 26px;
+    }
+
+    .dashboard-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-areas:
+            "weather weather"
+            "air safety"
+            "forecast forecast"
+            "favorites insight";
+        gap: 13px;
+    }
+
+    .weather-card {
+        min-height: 0;
+    }
+
+    .forecast-card {
+        min-height: 0;
+    }
+
+    .forecast-list {
+        gap: 12px;
+    }
+}
+
+/* Tablets and phones */
+@media (max-width: 760px) {
+    .app-layout {
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    /* Horizontal navigation on smaller screens */
+    .sidebar {
+        width: 100%;
+        flex: 0 0 auto;
+        padding: 15px 16px;
+        border-right: none;
+        border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+    }
+
+    .brand {
+        padding: 0 3px 15px;
+    }
+
+    .brand-icon {
+        width: 38px;
+        height: 38px;
+        flex-basis: 38px;
+        font-size: 20px;
+    }
+
+    .brand strong {
+        font-size: 18px;
+    }
+
+    .sidebar-heading {
+        margin: 0 4px 9px;
+        font-size: 9px;
+    }
+
+    .sidebar nav {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 7px;
+        overflow-x: auto;
+        padding: 2px 1px 7px;
+        scrollbar-width: thin;
+    }
+
+    .sidebar nav a {
+        flex: 0 0 auto;
+        min-height: 38px;
+        padding: 9px 12px;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+    .sidebar nav a span {
+        width: auto;
+        font-size: 15px;
+    }
+
+    .sidebar nav a:hover {
+        transform: none;
+    }
+
+    .sidebar-footer {
+        display: none;
+    }
+
+    main {
+        width: 100%;
+        padding: 22px 18px;
+    }
+
+    .topbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+        margin-bottom: 15px;
+    }
+
+    .welcome h1 {
+        font-size: 27px;
+    }
+
+    .welcome > p:last-child {
+        max-width: 450px;
+    }
+
+    .top-search {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .dashboard-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-areas:
+            "weather weather"
+            "air safety"
+            "forecast forecast"
+            "favorites favorites"
+            "insight insight";
+        gap: 13px;
+    }
+
+    .weather-card {
+        padding: 20px;
+    }
+
+    .temperature-block h3 {
+        font-size: 52px;
+    }
+
+    .card {
+        padding: 16px;
+        border-radius: 15px;
+    }
+
+    .card-heading h2 {
+        font-size: 15px;
+    }
+
+    .forecast-card {
+        min-height: 0;
+    }
+
+    .forecast-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .extra-section {
+        margin-top: 18px;
+        padding: 18px;
+    }
+
+    .page-footer {
+        flex-direction: column;
+        gap: 4px;
+    }
+}
+
+/* Standard mobile screens */
+@media (max-width: 520px) {
+    .sidebar {
+        padding: 13px 12px;
+    }
+
+    .sidebar nav {
+        gap: 6px;
+    }
+
+    .sidebar nav a {
+        padding: 9px 10px;
+        font-size: 11px;
+    }
+
+    main {
+        padding: 19px 13px;
+    }
+
+    .welcome h1 {
+        font-size: 24px;
+    }
+
+    .welcome .eyebrow {
+        font-size: 8px;
+        letter-spacing: 1.2px;
+    }
+
+    .welcome > p:last-child {
+        font-size: 12px;
+    }
+
+    .top-search {
+        gap: 6px;
+    }
+
+    .search-icon {
+        padding-left: 5px;
+        font-size: 22px;
+    }
+
+    #city-search {
+        font-size: 12px;
+    }
+
+    #search-btn {
+        padding: 9px 12px;
+    }
+
+    .dashboard-cards {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            "weather"
+            "air"
+            "safety"
+            "forecast"
+            "favorites"
+            "insight";
+        gap: 12px;
+    }
+
+    .weather-card {
+        padding: 19px;
+    }
+
+    .weather-card .card-heading h2 {
+        font-size: 17px;
+    }
+
+    .weather-symbol {
+        width: 53px;
+        height: 53px;
+        flex-basis: 53px;
+        border-radius: 16px;
+        font-size: 30px;
+    }
+
+    .temperature-block {
+        margin: 7px 0 19px;
+    }
+
+    .temperature-block h3 {
+        font-size: 49px;
+    }
+
+    .weather-summary {
+        gap: 7px;
+        padding-top: 13px;
+    }
+
+    .summary-item span {
+        font-size: 9px;
+    }
+
+    .summary-item strong {
+        font-size: 12px;
+    }
+
+    .card {
+        padding: 17px;
+    }
+
+    .forecast-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 7px;
+    }
+
+    .forecast-item {
+        padding: 12px 5px;
+    }
+
+    .forecast-item h4 {
+        font-size: 10px;
+    }
+
+    .forecast-icon {
+        font-size: 25px;
+    }
+
+    .forecast-item .forecast-condition {
+        font-size: 9px;
+    }
+
+    .forecast-item .forecast-temperature {
+        font-size: 11px;
+    }
+
+    .forecast-item .forecast-rain {
+        font-size: 9px;
+    }
+
+    .favorite-controls {
+        align-items: stretch;
+    }
+
+    #favorite-city {
+        width: 100%;
+    }
+
+    #add-favorite {
+        padding: 8px 11px;
+    }
+
+    .extra-section {
+        padding: 16px;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+    main {
+        padding: 15px 10px;
+    }
+
+    .sidebar nav a {
+        padding: 8px;
+        gap: 6px;
+        font-size: 10px;
+    }
+
+    .welcome h1 {
+        font-size: 22px;
+    }
+
+    .weather-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 12px;
+    }
+
+    .forecast-list {
+        gap: 5px;
+    }
+
+    .forecast-item {
+        padding: 10px 3px;
+    }
+
+    .forecast-item h4 {
+        font-size: 9px;
+    }
+
+    .temperature-block h3 {
+        font-size: 43px;
+    }
+
+    .favorite-controls {
+        flex-wrap: wrap;
+    }
+
+    #add-favorite {
+        width: 100%;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}

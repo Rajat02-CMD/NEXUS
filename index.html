@@ -1,0 +1,347 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#111827">
+    <meta name="description"
+        content="NEXUS provides city weather, air quality and weather safety information.">
+
+    <title>NEXUS | Weather & Safety Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <a href="#home" class="brand">
+                <span class="brand-icon">☁️</span>
+
+                <span>
+                    <strong>NEXUS</strong>
+                    <small>Weather • Safety • Air Quality</small>
+                </span>
+            </a>
+
+            <h2 class="sidebar-heading">WORKSPACE</h2>
+
+            <nav aria-label="Main navigation">
+                <a href="#home" class="active">
+                    <span>⌂</span> Home
+                </a>
+
+                <a href="#dashboard">
+                    <span>☁</span> Weather
+                </a>
+
+                <a href="#alerts">
+                    <span>🛡</span> Safety
+                </a>
+
+                <a href="#air-quality">
+                    <span>≋</span> Air Quality
+                </a>
+
+                <a href="#favorites">
+                    <span>♡</span> Favorites
+                </a>
+
+                <a href="#analytics">
+                    <span>ⓘ</span> Analytics
+                </a>
+                
+<div class="nav-auth">
+    <a href="./login.html" class="nav-login">Login</a>
+    <a href="./login.html?mode=signup" class="nav-signup">Sign Up</a>
+</div>
+
+            </nav>
+
+            <div class="sidebar-footer">
+                <span class="status-dot"></span>
+                <span>Weather services connected</span>
+
+                <p>Stay Informed.</p>
+                <p>Stay Prepared.</p>
+                <p>Stay Ahead.</p>
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main>
+
+            <!-- TOP BAR -->
+            <div class="topbar">
+
+                <div class="welcome">
+                    <p class="eyebrow">YOUR PERSONAL WEATHER HUB</p>
+
+                    <h1>
+                        Welcome to <span>NEXUS</span>
+                    </h1>
+
+                    <p>
+                        Real-time weather, safety and air quality
+                        at a glance.
+                    </p>
+                </div>
+
+                <!-- Keep these IDs for existing JavaScript -->
+                <form id="city-form" class="top-search">
+
+                    <label for="city-search" class="sr-only">
+                        Search city
+                    </label>
+
+                    <span class="search-icon" aria-hidden="true">⌕</span>
+
+                    <input
+                        type="text"
+                        id="city-search"
+                        placeholder="Search for a city..."
+                        autocomplete="off"
+                        required
+                    >
+
+                    <div id="city-suggestions" class="city-suggestions"></div>
+                    
+                    <button type="submit" id="search-btn">
+                        Search
+                    </button>
+                </form>
+
+                
+<div id="user-profile" class="user-profile"></div>
+
+            </div>
+
+            <p id="message" role="status" aria-live="polite"></p>
+
+
+            <!-- HOME DASHBOARD -->
+            <section id="home" class="home-section">
+
+                <div id="dashboard" class="dashboard-cards">
+
+                    <!-- CURRENT WEATHER -->
+                    <article class="card weather-card">
+
+                        <div class="card-heading">
+                            <div>
+                                <p class="eyebrow">CURRENT CONDITIONS</p>
+                                <h2 id="location-info">Search a city</h2>
+                            </div>
+
+                            <span class="weather-symbol"
+                                aria-hidden="true">🌤️</span>
+                        </div>
+
+                        <div class="temperature-block">
+                            <h3 id="temperature-info">--°C</h3>
+                            <p id="condition-info">Waiting for weather data</p>
+                        </div>
+
+                        <div class="weather-summary">
+
+                            <div class="summary-item">
+                                <span>🌡️ Feels like</span>
+                                <strong id="feels-like-info">--°C</strong>
+                            </div>
+
+                            <div class="summary-item">
+                                <span>💧 Humidity</span>
+                                <strong id="humidity-info">--%</strong>
+                            </div>
+
+                            <div class="summary-item">
+                                <span>💨 Wind speed</span>
+                                <strong id="wind-info">-- km/h</strong>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- AIR QUALITY -->
+                    <article id="air-quality" class="card air-card">
+
+                        <div class="card-heading">
+                            <div>
+                                <p class="eyebrow">ENVIRONMENT</p>
+                                <h2>Air Quality</h2>
+                            </div>
+
+                            <span class="card-icon blue-icon">≋</span>
+                        </div>
+
+                        <div id="air-info">
+                            <p>Air quality data will appear here.</p>
+                        </div>
+
+                    </article>
+
+
+                    <!-- SAFETY -->
+                    <article id="alerts" class="card safety-card">
+
+                        <div class="card-heading">
+                            <div>
+                                <p class="eyebrow">LOCAL CONDITIONS</p>
+                                <h2>Safety Indicator</h2>
+                            </div>
+
+                            <span class="card-icon red-icon">🛡️</span>
+                        </div>
+
+                        <h3 id="safety-info">
+                            Waiting for weather data...
+                        </h3>
+
+                        <p class="muted-text">
+                            Illustrative weather indicator, not an
+                            official safety assessment.
+                        </p>
+
+                    </article>
+
+
+                    <!-- FORECAST -->
+                    <article class="card forecast-card">
+
+                        <div class="card-heading">
+                            <div>
+                                <p class="eyebrow">PLAN AHEAD</p>
+                                <h2>3-Day Forecast</h2>
+                            </div>
+
+                            <span class="card-icon blue-icon">▦</span>
+                        </div>
+
+                        <div id="forecast-info" class="forecast-list">
+                            <p>Forecast will appear here.</p>
+                        </div>
+
+                    </article>
+
+
+                    <!-- FAVORITES -->
+                    <article id="favorites" class="card favorites-card">
+
+                        <div class="card-heading">
+                            <div>
+                                <p class="eyebrow">QUICK ACCESS</p>
+                                <h2>Favorite Cities</h2>
+                            </div>
+
+                            <span class="card-icon pink-icon">♡</span>
+                        </div>
+
+                        <div class="favorite-controls">
+
+                            <label for="favorite-city" class="sr-only">
+                                Enter a favorite city
+                            </label>
+
+                            <input
+                                type="text"
+                                id="favorite-city"
+                                placeholder="Add a city..."
+                                autocomplete="off"
+                            >
+
+                            <button type="button" id="add-favorite">
+                                + Add
+                            </button>
+
+                        </div>
+
+                        <ul id="favorite-list">
+                        </ul>
+
+                    </article>
+
+
+                    <!-- WEATHER SAFETY NOTE -->
+                    <article class="card insight-card">
+
+                        <div class="card-heading">
+                            <div>
+                                <p class="eyebrow">NEXUS INSIGHT</p>
+                                <h2>Stay Prepared</h2>
+                            </div>
+
+                            <span class="card-icon green-icon">✓</span>
+                        </div>
+
+                        <p>
+                            Check local weather and air quality before
+                            planning outdoor activities.
+                        </p>
+
+                        <a href="#analytics" class="text-link">
+                            Explore more information →
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- ANALYTICS -->
+            <section id="analytics" class="extra-section">
+
+                <p class="eyebrow">WEATHER INSIGHTS</p>
+                <h2>Weather Analytics</h2>
+
+                <p>
+                    Weather trends and additional insights can be
+                    added here as the project grows.
+                </p>
+
+            </section>
+
+
+            <!-- EXPLORE -->
+            <section id="explore" class="extra-section">
+
+                <p class="eyebrow">EXPLORE</p>
+                <h2>Explore a Location</h2>
+
+                <p>
+                    Use the search bar at the top to look up another city.
+                </p>
+
+            </section>
+
+            <footer class="page-footer">
+                <p>NEXUS · Weather & Location Intelligence</p>
+                <p>Weather information may change throughout the day.</p>
+            </footer>
+
+        </main>
+
+    </div>
+
+    
+<script type="module" src="./dashboard-auth.js"></script>
+<script src="./script.js"></script>
+<script src="script.js"></script>
+<script src="nexus-enhancements.js"></script>
+
+</body>
+</html>
+

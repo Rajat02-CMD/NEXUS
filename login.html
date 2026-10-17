@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS | Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <main class="auth-container">
+        <section class="auth-card">
+            <div class="brand">NEXUS<span>.</span></div>
+            <p class="subtitle">Your personal weather intelligence dashboard</p>
+
+            <div class="auth-tabs">
+                <button id="login-tab" class="tab active" type="button">Login</button>
+                <button id="signup-tab" class="tab" type="button">Sign Up</button>
+            </div>
+
+            <form id="auth-form">
+                <label for="name">Full Name</label>
+                <input id="name" type="text" placeholder="Your name" autocomplete="name" hidden>
+
+                <label for="email">Email Address</label>
+                <input id="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+
+                <label for="password">Password</label>
+                <input id="password" type="password" placeholder="At least 6 characters" autocomplete="current-password" minlength="6" required>
+
+                <button id="submit-btn" class="primary-btn" type="submit">Login</button>
+            </form>
+
+            <div class="separator">OR</div>
+            <button id="google-btn" class="google-btn" type="button">
+                Continue with Google
+            </button>
+
+            <p id="auth-message" role="status" aria-live="polite"></p>
+            <p class="footer-text">Secure authentication powered by Firebase</p>
+        </section>
+    </main>
+
+    <script type="module" src="auth.js"></script>
+</body>
+</html>
